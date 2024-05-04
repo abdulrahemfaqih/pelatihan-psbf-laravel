@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tahun_ajaran', function (Blueprint $table) {
-            $table->unsignedSmallInteger('id_tahub_ajaran')->primary();
+            $table->unsignedSmallInteger('id_tahun_ajaran')->primary();
             $table->unsignedSmallInteger('tahun');
             $table->enum('semester', ['Ganjil', 'Genap']);
             $table->timestamps();

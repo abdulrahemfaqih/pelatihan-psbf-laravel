@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('krs', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_krs');
+            $table->unsignedSmallInteger('tahun_ajaran_id');
+            $table->string('mahasiswa_id', 12);
+
+            $table->foreign('tahun_ajaran_id')->references('id_tahun_ajaran')->on('tahun_ajaran')->contrained();
+            $table->foreign('mahasiswa_id')->references('nim')->on('mahasiswa')->contrained();
             $table->timestamps();
         });
     }
